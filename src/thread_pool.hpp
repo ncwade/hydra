@@ -13,7 +13,7 @@ public:
 
 	ThreadPool(const int &numThreads) : mWork(mService)
 	{
-		for (auto i : boost::irange(1,numThreads))
+		for (auto i : boost::irange(0,numThreads))
 		{
 			mPool.create_thread(boost::bind(&boost::asio::io_service::run, &mService));
 		}
@@ -25,10 +25,10 @@ public:
 		mPool.join_all();
 	}
 
-	// Udpate to use varidaic templates for multiple paramters
+	// TODO: Update to use varidaic templates for multiple paramters
 	void execute(FunctionType function, FunctionInput input)
 	{
 		mService.post(boost::bind(function, input));
 	}
-	
+
 };

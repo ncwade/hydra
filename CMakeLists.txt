@@ -10,4 +10,4 @@ include_directories(${Boost_INCLUDE_DIRS})
 include_directories(vendor/path_finder/src)
 
 add_subdirectory(vendor/path_finder)
-add_subdirectory(src)
+add_subdirectory(test)
