@@ -1,0 +1,3 @@
+[submodule "vendor/path_finder"]
+	path = vendor/path_finder
+	url = https://github.com/jtomschroeder/path_finder.git
